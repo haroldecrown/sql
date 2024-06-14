@@ -1,0 +1,36 @@
+SELECT*
+FROM fortune_companies
+;
+
+SELECT company_name, industry, healthcare_benefits
+from fortune_companies
+order by healthcare_benefits
+;
+
+select *
+from fortune_companies
+where employees<= "10000"
+;
+
+select *, count (*)
+from fortune_companies
+where healthcare_benefits = "1" 
+;
+
+select *
+from fortune_companies
+where healthcare_benefits = "0" and avg_employee_tenure > "3"
+;
+
+select *, case
+	when paid_time_off_days >= "20" then "excellent"
+    when paid_time_off_days >= "15" then "good"
+    else "not_great"
+    end as "quality_of_life"
+    from fortune_companies
+    ;
+    
+select *
+from fortune_companies
+group by employees
+having employees > "10000"

@@ -1,0 +1,17 @@
+--Show Customers (their full names, customer ID, and country) who are not in the US.
+
+select FirstName,  LastName, Customerid, Country
+from chinook.customers
+where Country <> 'USA';
+
+--Show the Employees who are Sales Agents.
+
+select Employeeid, LastName, FirstName, Title
+from chinook.employees
+where Title like '%Sales%';
+
+--Show only the Customers from Brazil.
+
+select FirstName, LastName, Country
+from chinook.customers
+where Country = 'Brazil';
